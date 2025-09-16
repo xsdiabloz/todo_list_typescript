@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import classes from "../addTask/addTask.module.css";
-import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
 import Dialog from "@mui/material/Dialog";
 
 const AddTask = () => {
@@ -12,7 +12,7 @@ const AddTask = () => {
         <div>Is visible</div>
       </Dialog>
       <div onClick={() => setIsModal(true)} className={classes["add-task"]}>
-        <IconButton sx={{ width: 30, color: "white" }} />
+        <AddIcon sx={{ width: 30, color: "white" }} />
       </div>
     </>
   );
