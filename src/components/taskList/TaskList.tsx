@@ -1,21 +1,23 @@
 import React, { type FC } from "react";
 import classes from "../taskList/taskList.module.css";
 import Task from "../task/Task";
-import { type tasks } from "../../taskArray/taskArray";
+import { type T } from "../../taskArray/taskArray";
 
-interface ITask {
+interface ITasks {
   title: string;
-  tasks: tasks;
+  tasks: T[];
 }
 
-const TaskList: FC<ITask> = ({ tasks, title }) => {
+const TaskList: FC<ITasks> = ({ tasks, title }) => {
   return (
     <div className={classes.wrapper}>
       <div className={classes["list-title"]}>{title}</div>
       <div className={classes["task-list"]}>
-        <Task />
-        <Task />
-        <Task />
+        {tasks.length > 0 ? (
+          tasks.map((item) => <Task key={item.id} task={item} />)
+        ) : (
+          <h1>No tasks...</h1>
+        )}
       </div>
     </div>
   );
