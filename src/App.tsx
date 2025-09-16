@@ -1,10 +1,12 @@
 import "./App.css";
-import Task from "./components/task/Task";
+import TaskList from "./components/taskList/TaskList";
+import { taskArray } from "./taskArray/taskArray";
 
 function App() {
   return (
-    <div>
-      <Task />
+    <div className="main-wrapper">
+      <TaskList title="Completed" tasks={taskArray} />
+      <TaskList title="In process" tasks={taskArray} />
     </div>
   );
 }
