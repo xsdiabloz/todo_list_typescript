@@ -1,10 +1,10 @@
 import React, { type FC } from "react";
 import classes from "../task/task.module.css";
 import Checkbox from "@mui/material/Checkbox";
-import type { T } from "../../taskArray/taskArray";
+import type { TTasksArray } from "../../taskArray/taskArray";
 
 interface ITask {
-  task: T;
+  task: TTasksArray;
 }
 
 const Task: FC<ITask> = ({ task }) => {

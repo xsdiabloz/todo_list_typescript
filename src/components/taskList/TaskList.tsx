@@ -1,11 +1,11 @@
 import React, { type FC } from "react";
 import classes from "../taskList/taskList.module.css";
 import Task from "../task/Task";
-import { type T } from "../../taskArray/taskArray";
+import { type TTasksArray } from "../../taskArray/taskArray";
 
 interface ITasks {
   title: string;
-  tasks: T[];
+  tasks: TTasksArray[];
 }
 
 const TaskList: FC<ITasks> = ({ tasks, title }) => {

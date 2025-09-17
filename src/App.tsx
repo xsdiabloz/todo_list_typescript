@@ -1,17 +1,17 @@
 import "./App.css";
 import React, { useState } from "react";
 import TaskList from "./components/taskList/TaskList";
-import { taskArray, type T } from "./taskArray/taskArray";
-import { AddTask } from "@mui/icons-material";
+import { tasksArray, type TTasksArray } from "./taskArray/taskArray";
+import AddTask from "./components/addTask/AddTask";
 
 function App() {
-  const [tasks, setTasks] = useState<T[]>(taskArray);
+  const [tasks, setTasks] = useState<TTasksArray[]>(tasksArray);
 
   return (
     <>
       <div className="main-wrapper">
-        <TaskList title="Completed" tasks={taskArray} />
-        <TaskList title="In process" tasks={taskArray} />
+        <TaskList title="Completed" tasks={tasksArray} />
+        <TaskList title="In process" tasks={tasksArray} />
       </div>
       <AddTask />
     </>
