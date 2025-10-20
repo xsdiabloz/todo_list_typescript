@@ -1,9 +1,10 @@
-import React, { useState, type FormEvent } from "react";
+import React, { useState, type FC, type FormEvent } from "react";
 import classes from "../addForm/addForm.module.css";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import type { IAddTaskProps } from "../addTask/AddTask";
 
-const AddForm = () => {
+const AddForm: FC<IAddTaskProps> = ({ onAddTask }) => {
   const [title, setTitle] = useState<string>("");
   const [desc, setDesc] = useState<string>("");
 
@@ -11,6 +12,12 @@ const AddForm = () => {
     e.preventDefault();
     if (!title || !desc) return;
     console.log("task added");
+
+    onAddTask({
+      title,
+      desc,
+    });
+
     setTitle("");
     setDesc("");
   };

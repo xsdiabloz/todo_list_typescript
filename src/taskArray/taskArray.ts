@@ -1,9 +1,11 @@
 export type TTasksArray = {
-  id: number;
+  id: number | undefined;
   title: string;
   desc: string;
   done?: boolean;
 };
+
+export type TTaskInput = Omit<TTasksArray, "id">;
 
 export const tasksArray: TTasksArray[] = [
   { id: 1, title: "Task-1", desc: "Task-1 desc", done: false },
